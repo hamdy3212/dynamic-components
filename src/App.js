@@ -1,23 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { renderComponent } from './components/render/renderComponent';
+import { config } from './config';
 
 function App() {
+  const reactEvents = {
+    // Mouse Events
+    onClick: () => {},
+    onContextMenu: () => {},
+    onDoubleClick: () => {},
+    onDrag: () => {},
+    onDragEnd: () => {},
+    onDragEnter: () => {},
+    onDragExit: () => {},
+    onDragLeave: () => {},
+    onDragOver: () => {},
+    onDragStart: () => {},
+    onDrop: () => {},
+    onMouseDown: () => {},
+    onMouseEnter: () => {},
+    onMouseLeave: () => {},
+    onMouseMove: () => {},
+    onMouseOut: () => {},
+    onMouseOver: () => {},
+    onMouseUp: () => {},
+
+    // Keyboard Events
+    onKeyDown: () => {},
+    onKeyPress: () => {},
+    onKeyUp: () => {},
+
+    // Form Events
+    onChange: () => {},
+    onInput: () => {},
+    onSubmit: () => {},
+
+    // Touch Events
+    onTouchCancel: () => {},
+    onTouchEnd: () => {},
+    onTouchMove: () => {},
+    onTouchStart: () => {},
+
+    // Focus Events
+    onFocus: () => {},
+    onBlur: () => {},
+
+    // Other Events
+    onScroll: () => {},
+    onLoad: () => {},
+    onError: () => {},
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {renderComponent(config)}
     </div>
   );
 }
